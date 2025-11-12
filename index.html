@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Document</title>
+</head>
+<body id="homeTacky">
+    <div class="garland-banner">
+        <div class="ornaments">
+            <div class="ornament"></div>
+            <div class="ornament"></div>
+            <div class="ornament"></div>
+            <div class="ornament"></div>
+            <div class="ornament"></div>
+            <div class="ornament"></div>
+            <div class="ornament"></div>
+        </div>
+    </div>
+
+    <div class="conversation-container">
+        <img src="https://cdn.glif.app/e857e2ba-5a2c-4d5f-b97e-1b5df9dc2edc/outputs/3b42ae2c-c68d-4f1e-ab52-1ce80d2baef3.jpg" alt="Two women in 80s Christmas sweaters having a conversation" class="hero-image">
+
+        <div class="chat-slideshow">
+            <div class="chat-message left active">
+                <div class="speaker-name">Sarah</div>
+                <div class="message-text">Welcome! Click Next to start the conversation.</div>
+            </div>
+
+            <div class="chat-message right">
+                <div class="speaker-name">Jennifer</div>
+                <div class="message-text">Add your conversation text here!</div>
+            </div>
+
+            <div class="chat-message left">
+                <div class="speaker-name">Sarah</div>
+                <div class="message-text">Each message will appear one at a time.</div>
+            </div>
+
+            <div class="chat-message right">
+                <div class="speaker-name">Jennifer</div>
+                <div class="message-text">Just replace this placeholder text with your own dialogue!</div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="restart-btn" onclick="restartConversation()">🔄 Restart</button>
+            <button class="enter-btn" onclick="goToNextPage()">➡️ Enter</button>
+        </div>
+
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">4</span>
+        </div>
+    </div>
+</body>
+</html>
