@@ -7,6 +7,57 @@
     <title>Main</title>
 </head>
 <body id="mainTack">
+    <div class="lights-container"></div>
     
+    <div class="content">
+        <h1>Your Content Goes Here</h1>
+    </div>
+
+    <script>
+        function createLights() {
+            const container = document.querySelector('.lights-container');
+            const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange'];
+            const flashes = ['flash-1', 'flash-2', 'flash-3'];
+            const spacing = 40;
+            
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            
+            for (let x = 20; x < viewportWidth - 20; x += spacing) {
+                const light = document.createElement('div');
+                light.className = `light light-top light-${colors[Math.floor(Math.random() * colors.length)]} ${flashes[Math.floor(Math.random() * flashes.length)]}`;
+                light.style.left = x + 'px';
+                container.appendChild(light);
+            }
+            
+            for (let x = 20; x < viewportWidth - 20; x += spacing) {
+                const light = document.createElement('div');
+                light.className = `light light-bottom light-${colors[Math.floor(Math.random() * colors.length)]} ${flashes[Math.floor(Math.random() * flashes.length)]}`;
+                light.style.left = x + 'px';
+                container.appendChild(light);
+            }
+            
+            for (let y = 60; y < viewportHeight - 60; y += spacing) {
+                const light = document.createElement('div');
+                light.className = `light light-left light-${colors[Math.floor(Math.random() * colors.length)]} ${flashes[Math.floor(Math.random() * flashes.length)]}`;
+                light.style.top = y + 'px';
+                container.appendChild(light);
+            }
+            
+            for (let y = 60; y < viewportHeight - 60; y += spacing) {
+                const light = document.createElement('div');
+                light.className = `light light-right light-${colors[Math.floor(Math.random() * colors.length)]} ${flashes[Math.floor(Math.random() * flashes.length)]}`;
+                light.style.top = y + 'px';
+                container.appendChild(light);
+            }
+        }
+        
+        createLights();
+
+        window.addEventListener('resize', () => {
+            document.querySelector('.lights-container').innerHTML = '';
+            createLights();
+        });
+    </script> 
 </body>
 </html>

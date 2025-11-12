@@ -1,84 +1,77 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-#homeTacky {
-    background-color: red;
+
+#mainTack {
+    background-color: green;
     min-height: 100vh;
     position: relative;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-}
-#mainTack  {
-    background-color: green;
-}
-.garland-banner {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    background: linear-gradient(180deg, #2d5016 0%, #4a7c2c 100%);
-    border-bottom: 4px solid #d4af37;
-    overflow: hidden;
-}
-
-.garland-banner::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 40px;
-    top: 0;
-    background: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 50px,
-        #1a3a0f 50px,
-        #1a3a0f 100px
-    );
-}
-
-.ornaments {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-}
-
-.ornament {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.3), 
-                2px 2px 5px rgba(0,0,0,0.5);
-    animation: swing 3s ease-in-out infinite;
-}
-
-.ornament:nth-child(1) { background: radial-gradient(circle at 30% 30%, #ff6b6b, #cc0000); animation-delay: 0s; }
-.ornament:nth-child(2) { background: radial-gradient(circle at 30% 30%, #ffd700, #daa520); animation-delay: 0.5s; }
-.ornament:nth-child(3) { background: radial-gradient(circle at 30% 30%, #4169e1, #1e3a8a); animation-delay: 1s; }
-.ornament:nth-child(4) { background: radial-gradient(circle at 30% 30%, #32cd32, #228b22); animation-delay: 1.5s; }
-.ornament:nth-child(5) { background: radial-gradient(circle at 30% 30%, #ff1493, #c71585); animation-delay: 2s; }
-.ornament:nth-child(6) { background: radial-gradient(circle at 30% 30%, #ff6b6b, #cc0000); animation-delay: 0.7s; }
-.ornament:nth-child(7) { background: radial-gradient(circle at 30% 30%, #ffd700, #daa520); animation-delay: 1.2s; }
-
-@keyframes swing {
-    0%, 100% { transform: rotate(0deg) translateY(0); }
-    50% { transform: rotate(5deg) translateY(-5px); }
-}
-
-.conversation-container {
-    max-width: 900px;
-    margin: 40px auto;
     padding: 20px;
 }
-
-.hero-image {
+.lights-container {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    display: block;
-    border: 8px solid #228b22;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.light {
+    position: absolute;
+    width: 15px;
+    height: 20px;
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+}
+.light-top {
+    top: 10px;
+}
+.light-bottom {
+    bottom: 10px;
+}
+.light-left {
+    left: 10px;
+}
+
+.light-right {
+    right: 10px;
+}
+
+.light-red { color: #ff0000; background-color: #ff0000; }
+.light-green { color: #00ff00; background-color: #00ff00; }
+.light-blue { color: #0080ff; background-color: #0080ff; }
+.light-yellow { color: #ffff00; background-color: #ffff00; }
+.light-purple { color: #ff00ff; background-color: #ff00ff; }
+.light-orange { color: #ff8800; background-color: #ff8800; }
+
+@keyframes flash1 {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes flash2 {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+@keyframes flash3 {
+    0%, 33%, 66%, 100% { opacity: 1; }
+    16%, 50%, 83% { opacity: 0.2; }
+}
+
+.flash-1 { animation: flash1 1.5s infinite; }
+.flash-2 { animation: flash2 1.5s infinite; }
+.flash-3 { animation: flash3 2s infinite; }
+.content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
 }
