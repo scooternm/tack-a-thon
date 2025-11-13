@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/intro.css">
+    <script src="./script/index.js"></script>
     <title>Document</title>
 </head>
 <body id="homeTacky">
@@ -51,6 +52,36 @@
 
         <div class="slide-counter">
             <span id="currentSlide">1</span> / <span id="totalSlides">4</span>
+        </div>
+    </div>
+    <div class="music-player">
+        <div class="player-header">
+            <div class="player-title">🎵 WinAmp Player</div>
+            <button class="player-close" onclick="this.parentElement.parentElement.style.display='none'">×</button>
+        </div>
+        <div class="player-display">
+            <div id="track-name">♫ Jingle Bell Rock - 1990.mp3 ♫</div>
+            <div class="equalizer">
+                <div class="eq-bar" style="height: 20px;"></div>
+                <div class="eq-bar" style="height: 35px;"></div>
+                <div class="eq-bar" style="height: 15px;"></div>
+                <div class="eq-bar" style="height: 28px;"></div>
+                <div class="eq-bar" style="height: 32px;"></div>
+                <div class="eq-bar" style="height: 18px;"></div>
+                <div class="eq-bar" style="height: 25px;"></div>
+                <div class="eq-bar" style="height: 30px;"></div>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button class="player-btn" onclick="previousTrack()">⏮</button>
+            <button class="player-btn playing" id="playBtn" onclick="togglePlay()">⏸</button>
+            <button class="player-btn" onclick="nextTrack()">⏭</button>
+        </div>
+        <div class="volume-control">
+            <span class="volume-label">VOL</span>
+            <div class="volume-slider">
+                <div class="volume-fill"></div>
+            </div>
         </div>
     </div>
 </body>
